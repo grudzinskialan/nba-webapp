@@ -1,0 +1,95 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>nba app</title>
+    <link rel="icon" type="image/svg+xml" href="svg/nba.svg" />
+
+    <script defer src="script.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="section1 container-fluid">
+      <h2 class="text-center">Today's games:</h2>
+      <ul class="list-group">
+        <div id="games-today"></div>
+      </ul>
+      <h2 class="text-center">Upcoming games:</h2>
+      <div id="games"></div>
+    </div>
+    <div class="section2 container-fluid">
+      <h2 class="text-center">Team and player info:</h2>
+      <div class="container">
+        <div class="row">
+          <select
+            class="form-select form-select-sm"
+            id="teams-dropdown"
+            name="teams"
+            style="
+              width: 40rem;
+              display: block;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          ></select>
+
+          <div class="row">
+            <button
+              class="btn btn-dark"
+              style="
+                width: 30rem;
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+              "
+              onclick="getTeams()"
+            >
+              Get Team Info
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="app"></div>
+
+      <p id="roster"></p>
+
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="modalContent"></p>
+        </div>
+      </div>
+    </div>
+    <div class="section3 container-fluid">
+      <h2 class="text-center">Current standings:</h2>
+      <div id="standings">
+        <h5 id="st-season" class="text-center"></h5>
+        <table
+          class="table table-striped table-hover"
+          id="standings-tabE"
+        ></table>
+        <table
+          class="table table-striped table-hover"
+          id="standings-tabW"
+        ></table>
+      </div>
+      <h2 class="text-center">Predicted standings for upcoming season:</h2>
+      <table class="table table-striped table-hover" id="predStand"></table>
+    </div>
+  </body>
+</html>
+
+<!-- co bym chcial widziec:
+na wejsciu najblizsze gry (today?) oraz wybor daty gierek, mozliwe ze jak jets gierka to jets podswietlenie jak nie to nie
+tabela ze standingsami konferencji moze na mainie tez, z kazdej druzyny mozna kliknac na ich strone
+gdzie jest logo nazwa i roster, z rosteru na graczy osobno
+przy kazdej grze ten tzw predict button, w pracy cos napomniec o pierdoleniu z 538 projektu
+przy tabeli glownej tez zobacz prediction prawda -->
